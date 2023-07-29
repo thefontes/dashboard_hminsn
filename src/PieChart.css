@@ -1,0 +1,11 @@
+/* Estilo do contêiner do gráfico */
+.chart-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Estilo opcional para centralizar o gráfico horizontalmente */
+.card {
+    display: flex;
+    justify-content: center;
+}
