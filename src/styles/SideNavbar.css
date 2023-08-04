@@ -1,0 +1,39 @@
+/* SideNavbar.css */
+
+.sidebar {
+    position: fixed;
+    top: 56px; /* Ajuste a altura do topo conforme necessário */
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: #343a40; /* Cor de fundo para o menu lateral */
+    color: #fff; /* Cor do texto no menu lateral */
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-item {
+    padding: 10px;
+    border-bottom: 1px solid #555; /* Cor da borda entre os itens do menu */
+}
+
+.nav-item:last-child {
+    border-bottom: none; /* Remove a borda inferior do último item do menu */
+}
+
+.nav-item:hover {
+    cursor: pointer;
+    background-color: #555; /* Cor de fundo quando passar o mouse sobre os itens do menu */
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.selected {
+    background: #444; /* Cor de fundo do item selecionado no menu */
+}

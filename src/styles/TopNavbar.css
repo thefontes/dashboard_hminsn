@@ -1,0 +1,26 @@
+/* TopNavbar.css */
+
+.navbar {
+    /* Definindo altura e espaçamento para o navbar */
+    height: 56px;
+    padding: 0 15px;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 10px;
+}
+
+.nav-link {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Ajuste o estilo do botão de toggle se necessário */
+.navbar-toggler {
+    border: none;
+}
