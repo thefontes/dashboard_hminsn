@@ -7,7 +7,6 @@ import Dashboard from './components/Dashboard';
 
 const App = () => {
     const [selectedGraph, setSelectedGraph] = useState(0);
-
     const handleSelectGraph = (graphIndex) => {
         setSelectedGraph(graphIndex);
     };
