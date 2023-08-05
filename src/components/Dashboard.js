@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PieChart from './PieChart';
-import {obterComplicacoes, obterInternacoes, obterPartos, obterReadmissoes} from "../api/Dashboard";
+import {obterCesarianas, obterComplicacoes, obterInternacoes, obterPartos, obterReadmissoes} from "../api/Dashboard";
 import {generateGraph} from "../utils/graphUtils";
 
 const Dashboard = ({ selectedGraph }) => {
@@ -8,6 +8,7 @@ const Dashboard = ({ selectedGraph }) => {
     const [partos, setPartos] = useState([]);
     const [readmissoes, setReadmissoes] = useState([]);
     const [complicacoes, setComplicacoes] = useState([]);
+    const [cesarianas, setCesarianas] = useState([]);
 
     useEffect(() => {
        obterPartos().then(result => {
@@ -24,12 +25,18 @@ const Dashboard = ({ selectedGraph }) => {
             console.log(result)
             setComplicacoes(result)
         });
+        obterCesarianas().then(result => {
+            console.log(result)
+            setCesarianas(result)
+        });
     }, []);
 
     const internacoesGrahp = generateGraph("caso", "quantidade", internacoes)
     const partosGrahp = generateGraph("tipo_parto", "numero", partos)
     const readmissoesGrahp = generateGraph("motivo", "numero", readmissoes)
     const complicacoesGrahp = generateGraph("descricao", "numero", complicacoes)
+    const cesarianasGrahp = generateGraph("descricao", "numero", cesarianas)
+
     console.log(readmissoesGrahp)
    const handlerGraph = (title, data) => {
         return (
@@ -53,6 +60,7 @@ const Dashboard = ({ selectedGraph }) => {
             {selectedGraph === 2 && handlerGraph("Readmissões", readmissoesGrahp)}
             {console.log(selectedGraph)}
             {selectedGraph === 3 && handlerGraph("Complicações", complicacoesGrahp)}
+            {selectedGraph === 4 && handlerGraph("Cesarianas", cesarianasGrahp)}
         </div>
     );
 };

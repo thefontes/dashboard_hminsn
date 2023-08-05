@@ -36,3 +36,13 @@ export const obterComplicacoes = async () => {
         return []
     }
 };
+
+export const obterCesarianas = async () => {
+    try {
+        const response = await fetch('http://localhost:3002/cesarianas');
+        return await response.json();
+    } catch (error) {
+        console.error('Erro ao obter dados da api:', error);
+        return []
+    }
+};

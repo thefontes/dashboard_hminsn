@@ -24,6 +24,9 @@ const SideNavbar = ({ onSelectGraph }) => {
                 <li className={`nav-item${selectedItem === 3 ? ' selected' : ''}`} onClick={() => handleClick(3)}>
                     <a href="#" className="nav-link">Complicações</a>
                 </li>
+                <li className={`nav-item${selectedItem === 4 ? ' selected' : ''}`} onClick={() => handleClick(4)}>
+                    <a href="#" className="nav-link">Cesarianas</a>
+                </li>
             </ul>
         </nav>
     );
